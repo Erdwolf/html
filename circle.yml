@@ -5,8 +5,11 @@ test:
 
 deployment:
   production:
-    branch: gh-pages
+    branch: master
     commands:
+      - git clone . deploy -b gh-pages --single-branch
+      - mv index.html deploy/
+      - cd deploy
       - git config --global user.name  "Circle CI"
       - git config --global user.email "circleci@example.com"
       - git add index.html
