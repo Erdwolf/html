@@ -9,6 +9,6 @@ deployment:
     commands:
       - git config --global user.name  "Circle CI"
       - git config --global user.email "circleci@example.com"
-      - git clone git@github.com:Erdwolf/html.git deploy -b gh-pages --single-branch
+      - git clone https://$ACCESS_TOKEN:x-oauth-basicgithub.com/Erdwolf/html.git deploy -b gh-pages --single-branch
       - mv index.html deploy/
       - cd deploy && git add index.html && git commit -m "Deployed automatically" && git push
