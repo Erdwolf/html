@@ -7,11 +7,8 @@ deployment:
   production:
     branch: master
     commands:
-      - git clone git@github.com:Erdwolf/html.git deploy -b gh-pages --single-branch
-      - mv index.html deploy/
-      - cd deploy
       - git config --global user.name  "Circle CI"
       - git config --global user.email "circleci@example.com"
-      - git add index.html
-      - git commit --allow-empty -m "Deployed automatically"
-      - git push
+      - git clone git@github.com:Erdwolf/html.git deploy -b gh-pages --single-branch
+      - mv index.html deploy/
+      - cd deploy && git add index.html && git commit -m "Deployed automatically" && git push
