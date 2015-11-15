@@ -9,7 +9,7 @@ deployment:
     commands:
       - git config --global user.name  "Circle CI"
       - git config --global user.email "circleci@example.com"
-      - ${MISTYPED_ACCESS_TOKEN?You need to provide an \$ACCESS_TOKEN to Circle CI.}
+      - ${ACCESS_TOKEN?You need to provide an \$ACCESS_TOKEN to Circle CI.}
       - git clone https://$ACCESS_TOKEN:x-oauth-basic@github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git deploy -b gh-pages --single-branch
       - mv index.html deploy/
       - cd deploy && git add index.html && git commit -m "Deployed automatically" && git push
