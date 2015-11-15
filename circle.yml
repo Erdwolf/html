@@ -1,6 +1,6 @@
 test:
   override:
-    - vendor/bundle/ruby/1.9.1/bin/haml index.haml index.html
+    - bundle exec haml index.haml index.html
 
 
 deployment:
