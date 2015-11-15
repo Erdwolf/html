@@ -9,5 +9,5 @@ deployment:
     commands:
       - git config --global user.name  "Circle CI"
       - git config --global user.email "circleci@example.com"
-      - ${ACCESS_TOKEN?You need to provide an \$ACCESS_TOKEN to Circle CI.}
+      - echo ${ACCESS_TOKEN?You need to provide an \$ACCESS_TOKEN to Circle CI.}
       - ./deploy.sh index.html https://$ACCESS_TOKEN:x-oauth-basic@github.com/Erdwolf/html.git
