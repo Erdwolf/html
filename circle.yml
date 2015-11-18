@@ -1,12 +1,19 @@
 test:
   override:
+    # Build the html file:
     - bundle exec haml index.haml index.html
 
+general:
+  branches:
+    ignore:
+       # This is the branch we deploy to, so it should be ignored:
+      - gh-pages
 
 deployment:
   production:
     branch: master
     commands:
+      # Deploy html file to gh-pages branch:
       - git config --global user.name  "Circle CI"
       - git config --global user.email "circleci@example.com"
       - echo ${ACCESS_TOKEN?You need to provide an \$ACCESS_TOKEN to Circle CI.}
